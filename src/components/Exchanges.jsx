@@ -13,7 +13,7 @@ function Exchanges() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get("https://api.coingecko.com/api/v3/exchanges?").then((result) => {
+    axios.get("https://api.coingecko.com/api/v3/exchanges").then((result) => {
       setExchanges(result.data)
       setLoading(false);
     }).catch((err) => {
