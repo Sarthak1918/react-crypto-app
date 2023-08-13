@@ -1,9 +1,12 @@
 import React from 'react'
+import LoadSVG from 'react-loadsvg';
+import '../styles/Loader.scss'
+
 
 function Loader() {
   return (
-    <div>
-      Loading..
+    <div className='loader'>
+      <LoadSVG size={60} color="blue" />
     </div>
   )
 }
