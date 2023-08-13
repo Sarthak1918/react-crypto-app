@@ -1,0 +1,16 @@
+.exchanges-container{
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .exchanges-section{
+        background-color: white;
+        padding: 10px;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
