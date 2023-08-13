@@ -8,7 +8,7 @@ function CoinCard({id,name,image,symbol,currencySymbol,currentPrice}) {
         <img src ={ image } alt="logo"/>
         <h3>{symbol}</h3>
         <p>{name}</p>
-        <h3>{currencySymbol} {currentPrice}</h3>
+        <h3>{currencySymbol}{currentPrice}</h3>
 
     </Link>
   )
