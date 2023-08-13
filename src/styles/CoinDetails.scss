@@ -1,0 +1,74 @@
+.coin-details-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+
+
+    .currency-selection {
+        display: flex;
+        gap: 15px;
+        align-self: center;
+        font-weight: 700;
+    }
+
+    .update-info {
+        padding: 20px;
+        align-self: center;
+    }
+
+    .coin-details {
+        width: 100%;
+        padding: 10px 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+
+        .coin-details-left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+
+            .progress-bar {
+                -webkit-appearance: none;
+                appearance: none;
+
+                width: 100%;
+                height: 10px;
+
+                &::-webkit-progress-bar {
+                    background-color: #eee;
+                    border-radius: 2px;
+                }
+
+                &::-webkit-progress-value {
+                    background: teal;
+
+                    border-radius: 2px;
+                    background-size: 35px 20px, 100% 100%, 100% 100%;
+                }
+            }
+
+            .progress-stats{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+        }
+
+        .coin-details-right {
+            flex: 1;
+            background-color: red;
+        }
+
+
+    }
+
+
+
+
+
+}

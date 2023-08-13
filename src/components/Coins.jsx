@@ -44,7 +44,7 @@ function Coins() {
     <div className='coins-container'>
       <div className='currency-selection'>
         <div>
-          <input type="radio" name="currency" id='inr' value={"inr"} onClick={(e)=>{setCurrency(e.target.value)}}/>
+          <input type="radio" name="currency" id='inr' value={"inr"} defaultChecked onClick={(e)=>{setCurrency(e.target.value)}}/>
           <label htmlFor='inr'>INR</label>
         </div>
         <div>
