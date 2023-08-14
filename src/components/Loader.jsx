@@ -6,7 +6,7 @@ import '../styles/Loader.scss'
 function Loader() {
   return (
     <div className='loader'>
-      <LoadSVG size={60} color="blue" />
+      <LoadSVG size={60} color="black" />
     </div>
   )
 }

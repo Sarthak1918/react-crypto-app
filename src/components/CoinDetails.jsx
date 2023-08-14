@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import LoadSVG from 'react-loadsvg';
 import { useParams } from 'react-router-dom';
 import ErrorComponent from './ErrorComponent';
 import "../styles/CoinDetails.scss"
 import moment from 'moment/moment';
 import upicon from "../assets/up-icon.png"
 import downicon from "../assets/down-icon.png"
+import Loader from './Loader';
 
 function CoinDetails() {
   const [coin, setCoin] = useState(null)
@@ -34,7 +34,7 @@ function CoinDetails() {
 
   return (
     <div className="coin-details-container">
-      {loading ? <LoadSVG /> :
+      {loading ? <Loader/> :
         <>
 
 
@@ -55,7 +55,7 @@ function CoinDetails() {
 
 
 
-          <div className='update-info'>Last updated on {moment(coin.last_updated).format("dddd, MMMM Do YYYY, h:mm:ss a")}</div>
+          <div className='update-info'><h4>Last updated on {moment(coin.last_updated).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h4></div>
 
 
           <div className='coin-details'>
@@ -76,32 +76,49 @@ function CoinDetails() {
               <progress
                 className='progress-bar'
                 value={
-                  (coin.market_data.current_price[currency] - coin.market_data.low_24h[currency]) / 
+                  (coin.market_data.current_price[currency] - coin.market_data.low_24h[currency]) /
                   (coin.market_data.high_24h[currency] - coin.market_data.low_24h[currency]) * 100
                 }
                 min={0}
                 max={100}
               />
               <div className='progress-stats'>
-                <h5 style={{ backgroundColor: "#f78989" }}>{currencySymbol}{coin.market_data.low_24h[currency]}</h5>
+                <h5 style={{ backgroundColor: "#f78989",padding:"5px" }}>{currencySymbol}{coin.market_data.low_24h[currency]}</h5>
                 <h5>24hr Range</h5>
-                <h5 style={{ backgroundColor: "#92e79b" }}>{currencySymbol}{coin.market_data.high_24h[currency]}</h5>
+                <h5 style={{ backgroundColor: "#92e79b",padding:"5px" }}>{currencySymbol}{coin.market_data.high_24h[currency]}</h5>
               </div>
 
             </div>
 
 
             <div className='coin-details-right'>
-              fjskdvlskdkjsndkn
+              <RightDetailsItem property={"Market Cap Rank"} value={coin.market_cap_rank} />
+              <RightDetailsItem property={"Max Supply"} value={coin.market_data.max_supply} />
+              <RightDetailsItem property={"Circulating Supply"} value={coin.market_data.circulating_supply} />
+              <RightDetailsItem property={"Market Cap"} value={`${currencySymbol}${coin.market_data.market_cap[currency]}`} />
+              <RightDetailsItem property={"All time low"} value={`${currencySymbol}${coin.market_data.atl[currency]}`} />
+              <RightDetailsItem property={"All time high"} value={`${currencySymbol}${coin.market_data.ath[currency]}`} />
             </div>
 
 
 
           </div>
+          <div className="chart-section" style={{ backgroundColor: "blue", width: "100%" }}>
+            Hii
+          </div>
 
-        </>}
+        </>
+      }
     </div>
   )
+}
+
+
+function RightDetailsItem({ property, value }) {
+  return <div className='coin-details-right-items'>
+    <p><strong>{property}</strong></p>
+    <p><strong>{value}</strong></p>
+  </div>
 }
 
 export default CoinDetails
