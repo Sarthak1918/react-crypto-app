@@ -1,11 +1,11 @@
-.coins-container{
+.coins-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 
-    .coins-section{
+    .coins-section {
         padding: 20px;
         padding-bottom: 100px;
         width: 80%;
@@ -15,39 +15,46 @@
         flex-wrap: wrap;
     }
 
-    .currency-selection{
+    .currency-selection {
         padding: 10px;
         display: flex;
         gap: 20px;
-        
-        label{
+
+        label {
             font-weight: 700;
         }
     }
 }
 
-.btns{
+.btns {
     width: 80%;
     padding: 10px;
     position: absolute;
     bottom: 20px;
     display: flex;
     overflow-x: auto;
-    &::-webkit-scrollbar{
+
+    &::-webkit-scrollbar {
         display: none;
     }
 
-    button{
-        background-color: black;
-        color: white;
+    button {
+        font-family: 'Bricolage Grotesque', sans-serif;
+        background-color: rgb(223, 236, 242);
+        border: none;
+        font-weight: 600;
         padding: 5px 8px;
-        margin-inline: 3px ;
+        margin-inline: 3px;
         cursor: pointer;
         border-radius: 5px;
 
-        &.page-selected{
-            background-color: rgb(199, 199, 199);
-            color: black;
+        &:hover {
+            background-color: rgb(198, 215, 224);
+        }
+
+        &.page-selected {
+            color: white;
+            background-color: black;
         }
     }
 }
