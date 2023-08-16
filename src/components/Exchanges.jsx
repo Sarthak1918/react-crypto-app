@@ -4,6 +4,7 @@ import Loader from './Loader'
 import ExchangeCard from './ExchangeCard'
 import "../styles/Exchanges.scss"
 import ErrorComponent from './ErrorComponent'
+import Pagination from './Pagination'
 
 
 
@@ -26,13 +27,8 @@ function Exchanges() {
 
   if(error) return <ErrorComponent message={"Something Wrong Occurred while Fetching!Please try again.."}/>
 
-  const btns = new Array(10).fill(1);
 
   
-  function changePage(pageNumber) {
-    setPage(pageNumber);
-    setLoading(true)
-  }
 
 
   return (
@@ -48,14 +44,8 @@ function Exchanges() {
           </>
         }
       </div>
-      <div className='btns'>
-        {btns.map((item, index) => {
-          return <button className='page-btn' onClick={(e) => {
-            changePage(index + 1)
-            document.querySelectorAll(".page-btn").forEach((btn)=>btn.classList.remove("page-selected"))
-            e.target.classList.add("page-selected")
-          }}>{index + 1}</button>
-        })}
+      <div className='pagination-btns'>
+       <Pagination size={10} setLoading={setLoading} setPage={setPage}/>
       </div>
     </div>
   )

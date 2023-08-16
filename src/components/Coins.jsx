@@ -5,6 +5,7 @@ import Loader from './Loader'
 import "../styles/Exchanges.scss"
 import ErrorComponent from './ErrorComponent'
 import CoinCard from './CoinCard'
+import Pagination from './Pagination'
 
 
 
@@ -19,7 +20,6 @@ function Coins() {
   const currencySymbol =
     currency === "inr" ? "₹" : currency === "eur" ? "€" : "$"
 
-  const btns = new Array(101).fill(1);
 
   useEffect(() => {
     axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}`).then((result) => {
@@ -33,12 +33,6 @@ function Coins() {
   }, [currency, page])
 
   if (error) return <ErrorComponent message={"Something Wrong Occurred while Fetching Coins!Please try again.."} />
-
-  function changePage(pageNumber) {
-    setPage(pageNumber);
-    setLoading(true)
-  }
-
 
   return (
     <div className='coins-container'>
@@ -69,14 +63,8 @@ function Coins() {
         }
       </div>
 
-      <div className='btns'>
-        {btns.map((item, index) => {
-          return <button className='page-btn' onClick={(e) => {
-            changePage(index + 1)
-            document.querySelectorAll(".page-btn").forEach((btn)=>btn.classList.remove("page-selected"))
-            e.target.classList.add("page-selected")
-          }}>{index + 1}</button>
-        })}
+      <div className='pagination-btns'>
+        <Pagination size={100} setLoading={setLoading} setPage={setPage}/>
       </div>
     </div>
   )

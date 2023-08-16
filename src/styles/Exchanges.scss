@@ -16,39 +16,10 @@
 
     }
 
-    .btns {
+    .pagination-btns {
         width: 80%;
         padding: 10px;
         position: absolute;
         bottom: 20px;
-        display: flex;
-        overflow-x: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    
-        button {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            background-color: rgb(223, 236, 242);
-            border: none;
-            font-weight: 600;
-            padding: 5px 8px;
-            margin-inline: 3px;
-            cursor: pointer;
-            border-radius: 5px;
-    
-            &:hover {
-                background-color: rgb(198, 215, 224);
-            }
-    
-            &.page-selected {
-                color: white;
-                background-color: black;
-            }
-        }
     }
 }
