@@ -1,7 +1,7 @@
 import React from 'react'
 import "../styles/Pagination.scss"
 function Pagination({size,setLoading,setPage}) {
-    const btns = new Array(size).fill(1);
+    const btns = new Array(size).fill(null);
     function changePage(pageNumber) {
         setPage(pageNumber);
         setLoading(true)

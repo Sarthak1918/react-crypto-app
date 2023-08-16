@@ -3,13 +3,32 @@
     height: 100vh;
     background-color: black;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     img{
         object-fit: contain;
-        width: 30%;
-        max-width: 800px;
+        width: 70%;
+        max-width: 500px;
         animation: moveBackAndForthY 3s ease-in-out infinite;
+        aspect-ratio: 47 / 49; 
+    }
 
+    .typeWriterText{
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      gap: 10px;
+
+      h1{
+        text-transform: capitalize;
+        font-size:40px;
+        color: white;
+
+        span{
+          color: white;
+        }
+      }
+      
     }
 
     .footer{
@@ -23,6 +42,6 @@
     }
     
     50% {
-      transform: translateY(30px); /* Adjust the distance as needed */
+      transform: translateY(30px);
     }
   }
