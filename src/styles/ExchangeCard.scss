@@ -10,8 +10,9 @@
     height: 150px;
     width: 15%;
     min-width:160px ;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     transition: all ease 0.4s;
+    background-color: white;
 
     &:hover{
         transform: scale(1.1);

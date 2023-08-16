@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <div className='header-container'>
-      <p><Link to="/">Home</Link></p>
-      <p><Link to="/exchanges">Exchanges</Link></p>
-      <p><Link to="/coins">Coins</Link></p>
+      <Link to="/" className='logo'>
+        <h2>XCrypto</h2>
+      </Link>
+      <div className='header-options'>
+        <p><Link to="/">Home</Link></p>
+        <p><Link to="/exchanges">Exchanges</Link></p>
+        <p><Link to="/coins">Coins</Link></p>
+      </div>
+
     </div>
   )
 }
